@@ -1,10 +1,43 @@
-// Number of stars in a row
-let stars = 16;
+let n = 5; // number of rows for the top half
 
-// Loop to print stars
-let pattern = "";
-for (let i = 1; i <= stars; i++) {
-    pattern += "* "; // Add a star followed by a space
+// Top half of the diamond
+for (let i = 1; i <= n; i++) {
+    let line = '';
+
+    // Add leading spaces
+    for (let j = 1; j <= n - i; j++) {
+        line += ' ';
+    }
+
+    // Add stars and inner spaces
+    for (let j = 1; j <= 2 * i - 1; j++) {
+        if (j === 1 || j === 2 * i - 1) {
+            line += '*';
+        } else {
+            line += ' ';
+        }
+    }
+
+    console.log(line);
 }
 
-console.log(pattern); // Print the pattern
+// Bottom half of the diamond
+for (let i = n - 1; i >= 1; i--) {
+    let line = '';
+
+    // Add leading spaces
+    for (let j = 1; j <= n - i; j++) {
+        line += ' ';
+    }
+
+    // Add stars and inner spaces
+    for (let j = 1; j <= 2 * i - 1; j++) {
+        if (j === 1 || j === 2 * i - 1) {
+            line += '*';
+        } else {
+            line += ' ';
+        }
+    }
+
+    console.log(line);
+}
