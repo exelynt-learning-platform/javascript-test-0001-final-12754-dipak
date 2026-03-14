@@ -1,0 +1,43 @@
+let n = 5; // number of rows for the top half
+
+// Top half of the diamond
+for (let i = 1; i <= n; i++) {
+    let line = "";
+
+    // Spaces before stars
+    for (let j = 1; j <= n - i; j++) {
+        line += " ";
+    }
+
+    // Stars with spaces inside
+    for (let j = 1; j <= 2 * i - 1; j++) {
+        if (j == 1 || j == 2 * i - 1) {
+            line += "*";
+        } else {
+            line += " ";
+        }
+    }
+
+    console.log(line);
+}
+
+// Bottom half of the diamond
+for (let i = n - 1; i >= 1; i--) {
+    let line = "";
+
+    // Spaces before stars
+    for (let j = 1; j <= n - i; j++) {
+        line += " ";
+    }
+
+    // Stars with spaces inside
+    for (let j = 1; j <= 2 * i - 1; j++) {
+        if (j == 1 || j == 2 * i - 1) {
+            line += "*";
+        } else {
+            line += " ";
+        }
+    }
+
+    console.log(line);
+}
